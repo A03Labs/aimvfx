@@ -1,2 +1,0 @@
-export interface ToastProps{ tone?:'info'|'success'|'warning'|'danger'; title:React.ReactNode; message?:React.ReactNode; onClose?:()=>void; style?:React.CSSProperties; }
-export declare function Toast(p:ToastProps):JSX.Element;

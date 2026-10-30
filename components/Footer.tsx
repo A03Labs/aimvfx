@@ -30,7 +30,14 @@ export function Footer() {
           Vimeo
         </a>
       </div>
-      <span>© 2026</span>
+      <a
+        href="https://a03labs.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ color: 'inherit' }}
+      >
+        Site by A03 Labs
+      </a>
     </footer>
   );
 }

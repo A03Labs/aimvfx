@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useTheme } from './ThemeProvider';
 import { Button } from './ui/Button';
+import { Sun, Moon } from 'lucide-react';
 
 export function Header() {
   const pathname = usePathname();
@@ -55,18 +56,22 @@ export function Header() {
           <button
             onClick={toggleTheme}
             type="button"
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
             style={{
               background: 'none',
               border: 'none',
               padding: 0,
-              font: 'inherit',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               cursor: 'pointer',
-              fontSize: 15,
               color: 'var(--fg-3)',
               transition: 'color var(--dur-fast)'
             }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--fg-1)')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--fg-3)')}
           >
-            {theme === 'dark' ? 'Light' : 'Dark'}
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
           </button>
           <Button size="sm" onClick={() => router.push('/contact')}>
             Start a project
