@@ -41,3 +41,116 @@ img, video {
   display: block;
 }
 
+/* Responsive Navigation & Layout */
+.header-desktop-nav {
+  display: flex;
+}
+
+.header-mobile-actions {
+  display: none;
+}
+
+.header-logo {
+  height: 26px;
+  cursor: pointer;
+  display: block;
+}
+
+.header-icon-btn {
+  background: none;
+  border: none;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--fg-2);
+  border-radius: var(--radius-sm);
+  transition: color var(--dur-fast);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.header-icon-btn:hover {
+  color: var(--fg-1);
+}
+
+.header-mobile-drawer {
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(100vh - 72px);
+  height: calc(100dvh - 72px);
+  z-index: 35;
+  background: var(--bg-1);
+  padding: var(--space-6) var(--gutter) var(--space-7);
+  display: flex;
+  flex-direction: column;
+  justifyContent: space-between;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  animation: aim-rise var(--dur-fast) var(--ease-out);
+}
+
+@media (max-width: 767px) {
+  .header-desktop-nav {
+    display: none !important;
+  }
+
+  .header-mobile-actions {
+    display: flex !important;
+  }
+
+  .header-logo {
+    height: 22px;
+  }
+}
+
+@media (min-width: 768px) {
+  .header-mobile-drawer {
+    display: none !important;
+  }
+}
+
+/* Responsive Footer */
+.site-footer {
+  padding: var(--space-9) var(--gutter) var(--space-6);
+  display: flex;
+  justifyContent: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 14px;
+  color: var(--fg-3);
+}
+
+.site-footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.site-footer-link {
+  color: inherit;
+  transition: color var(--dur-fast);
+}
+
+.site-footer-link:hover {
+  color: var(--fg-1);
+}
+
+@media (max-width: 767px) {
+  .site-footer {
+    padding: var(--space-7) var(--gutter) var(--space-6);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .site-footer-socials {
+    gap: 20px;
+    padding: 2px 0;
+  }
+}
+
