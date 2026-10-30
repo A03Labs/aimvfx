@@ -1,0 +1,10 @@
+:root{
+  --ease-out:cubic-bezier(.16,1,.3,1); --ease-in-out:cubic-bezier(.65,0,.35,1); --ease-in:cubic-bezier(.7,0,.84,0);
+  --ease-snap:cubic-bezier(.34,1.4,.64,1);
+  --dur-instant:100ms; --dur-fast:180ms; --dur-base:320ms; --dur-slow:600ms; --dur-reveal:900ms; --dur-cinematic:1400ms;
+  --stagger:60ms;
+}
+@keyframes aim-gradient-pan{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+@keyframes aim-rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes aim-wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@media (prefers-reduced-motion:reduce){:root{--dur-fast:0ms;--dur-base:0ms;--dur-slow:0ms;--dur-reveal:0ms;--dur-cinematic:0ms}}

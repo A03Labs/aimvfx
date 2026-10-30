@@ -1,0 +1,175 @@
+/* AIM VFX design tokens */
+:root {
+  --aim-navy-950: #0c1023;
+  --aim-navy-900: #121833;
+  --aim-navy-800: #1a2144;
+  --aim-navy-700: #262e58;
+  --aim-navy-600: #3a4373;
+  --aim-navy-500: #565f8f;
+  --aim-navy-400: #7c84ab;
+  --aim-navy-300: #a5abc8;
+  --aim-navy-200: #c9cde0;
+  --aim-navy-100: #e6e8f1;
+  --aim-navy-50: #f4f5f9;
+  --aim-white: #ffffff;
+  --aim-blush: #fde1fe;
+  --aim-pink: #fe71ff;
+  --aim-orchid: #da6efd;
+  --aim-violet: #8368fa;
+  --aim-indigo: #5165f8;
+  --aim-blue: #4387f6;
+  --aim-sky: #33b0f5;
+  --aim-cyan: #24d6f4;
+  --aim-black: #000000;
+  --aim-cyan-50: #c1f6fd;
+  --aim-pink-50: #ffe3ff;
+  --aim-indigo-50: #e5e8ff;
+  --aim-success: #2fbf8a;
+  --aim-warning: #f5b544;
+  --aim-danger: #f2546b;
+
+  --aim-gradient: linear-gradient(100deg, #fe71ff 0%, #da6efd 18%, #8368fa 40%, #5165f8 60%, #4387f6 76%, #24d6f4 100%);
+  --aim-gradient-full: linear-gradient(100deg, #fde1fe 0%, #fe71ff 20%, #8368fa 46%, #5165f8 64%, #24d6f4 100%);
+  --aim-gradient-soft: linear-gradient(100deg, rgba(254,113,255,.18), rgba(81,101,248,.18) 55%, rgba(36,214,244,.18));
+  --aim-glow: radial-gradient(60% 60% at 50% 40%, rgba(131,104,250,.35), rgba(12,16,35,0) 70%);
+
+  --bg-1: var(--aim-navy-950);
+  --bg-2: var(--aim-navy-900);
+  --bg-3: var(--aim-navy-800);
+  --surface-card: var(--aim-navy-900);
+  --surface-raised: var(--aim-navy-800);
+  --surface-inverse: var(--aim-white);
+  --fg-1: var(--aim-white);
+  --fg-2: var(--aim-navy-200);
+  --fg-3: var(--aim-navy-400);
+  --fg-inverse: var(--aim-navy-950);
+  --border-1: rgba(255,255,255,.10);
+  --border-2: rgba(255,255,255,.20);
+  --border-strong: rgba(255,255,255,.5);
+  --accent: var(--aim-indigo);
+  --accent-hover: #6476fa;
+  --accent-text: var(--aim-cyan);
+  --accent-2: var(--aim-pink);
+  --focus-ring: 0 0 0 2px var(--bg-1), 0 0 0 4px var(--aim-cyan);
+  --overlay: rgba(6,8,20,.72);
+  --panel-tint: var(--aim-navy-800);
+  --panel-tint-fg: var(--aim-cyan);
+
+  --font-sans: "Neulis Alt", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: var(--font-sans);
+  --fw-thin: 100;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
+  --fs-display-xl: clamp(64px, 9vw, 128px);
+  --fs-display: clamp(48px, 6.5vw, 88px);
+  --fs-h1: clamp(40px, 4.6vw, 60px);
+  --fs-h2: clamp(30px, 3.2vw, 42px);
+  --fs-h3: 28px;
+  --fs-h4: 22px;
+  --fs-body-lg: 20px;
+  --fs-body: 17px;
+  --fs-small: 15px;
+  --fs-caption: 13px;
+  --fs-eyebrow: 13px;
+  --lh-tight: 0.95;
+  --lh-heading: 1.08;
+  --lh-snug: 1.3;
+  --lh-body: 1.55;
+  --ls-display: -0.035em;
+  --ls-heading: -0.02em;
+  --ls-body: 0;
+  --ls-eyebrow: 0.16em;
+
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --space-11: 160px;
+  --radius-0: 0;
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+  --border-w: 1px;
+  --shadow-1: 0 1px 2px rgba(6,8,20,.24);
+  --shadow-2: 0 12px 32px -12px rgba(6,8,20,.5);
+  --shadow-3: 0 32px 80px -24px rgba(6,8,20,.7);
+  --shadow-glow: 0 10px 40px -10px rgba(131,104,250,.6), 0 4px 24px -8px rgba(36,214,244,.35);
+  --container: 1280px;
+  --gutter: clamp(20px, 4vw, 56px);
+
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --ease-in-out: cubic-bezier(.65, 0, .35, 1);
+  --ease-in: cubic-bezier(.7, 0, .84, 0);
+  --ease-snap: cubic-bezier(.34, 1.4, .64, 1);
+  --dur-instant: 100ms;
+  --dur-fast: 180ms;
+  --dur-base: 320ms;
+  --dur-slow: 600ms;
+  --dur-reveal: 900ms;
+  --dur-cinematic: 1400ms;
+  --stagger: 60ms;
+}
+
+[data-theme="light"] {
+  --bg-1: var(--aim-white);
+  --bg-2: var(--aim-navy-50);
+  --bg-3: var(--aim-navy-100);
+  --surface-card: var(--aim-white);
+  --surface-raised: var(--aim-white);
+  --surface-inverse: var(--aim-navy-950);
+  --fg-1: var(--aim-navy-950);
+  --fg-2: var(--aim-navy-600);
+  --fg-3: var(--aim-navy-500);
+  --fg-inverse: var(--aim-white);
+  --border-1: rgba(12,16,35,.10);
+  --border-2: rgba(12,16,35,.18);
+  --border-strong: rgba(12,16,35,.6);
+  --accent: var(--aim-indigo);
+  --accent-hover: #3f54f0;
+  --accent-text: #3a4fe6;
+  --accent-2: #c03ad0;
+  --focus-ring: 0 0 0 2px var(--bg-1), 0 0 0 4px var(--aim-indigo);
+  --overlay: rgba(12,16,35,.5);
+  --panel-tint: var(--aim-cyan-50);
+  --panel-tint-fg: var(--aim-indigo);
+}
+
+@keyframes aim-gradient-pan {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes aim-rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes aim-wipe {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-base: 0ms;
+    --dur-slow: 0ms;
+    --dur-reveal: 0ms;
+    --dur-cinematic: 0ms;
+  }
+}
+

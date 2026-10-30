@@ -1,0 +1,5 @@
+html{color-scheme:dark}
+body{margin:0;background:var(--bg-1);color:var(--fg-1);font-family:var(--font-sans);font-size:var(--fs-body);line-height:var(--lh-body);-webkit-font-smoothing:antialiased}
+a{color:var(--accent-text);text-decoration:none}
+a:hover{color:var(--fg-1)}
+::selection{background:var(--aim-violet);color:#fff}

@@ -1,0 +1,41 @@
+<!-- @dsCard group="Website" viewport="1280x900" name="AIM VFX website · official" subtitle="Official studio site: filterable work grid, project pages, studio, contact" -->
+<!doctype html><html data-theme="light"><head><meta charset="utf-8"><title>AIM VFX — We make ideas impossible to miss</title><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
+<script src="../_shared/aim-loader.js"></script><script src="image-slot.js"></script><script src="data.js"></script>
+</head><body><div id="root"></div>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="Poster.jsx"></script><script type="text/babel" src="Tile.jsx"></script><script type="text/babel" src="Header.jsx"></script><script type="text/babel" src="Footer.jsx"></script>
+<script type="text/babel" src="IndexScreen.jsx"></script><script type="text/babel" src="FlipBook.jsx"></script><script type="text/babel" src="ProjectScreen.jsx"></script><script type="text/babel" src="StudioScreen.jsx"></script><script type="text/babel" src="ContactScreen.jsx"></script>
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "theme": "light",
+  "gridSize": "3-up",
+  "contactLayout": "split"
+}/*EDITMODE-END*/;
+function App(){
+  const [t,setTweak]=useTweaks(TWEAK_DEFAULTS);
+  const [route,setRoute]=React.useState(localStorage.getItem('aim2-route')||'index');
+  const theme=t.theme; const setTheme=v=>setTweak('theme',v);
+  React.useEffect(()=>{document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme},[theme]);
+  const go=r=>{setRoute(r);localStorage.setItem('aim2-route',r);window.scrollTo(0,0)};
+  return <div style={{minHeight:'100vh',background:'var(--bg-1)',color:'var(--fg-1)',transition:'background var(--dur-base)'}}>
+    <Header route={route} go={go} theme={theme} setTheme={setTheme}/>
+    {route==='index'&&<IndexScreen go={go} cols={t.gridSize==='2-up'?'2':'3'}/>}
+    {route.startsWith('p:')&&<ProjectScreen key={route} slug={route.slice(2)} go={go}/>}
+    {route==='studio'&&<StudioScreen go={go}/>}{route==='contact'&&<ContactScreen layout={t.contactLayout}/>}
+    <Footer/>
+    <TweaksPanel>
+      <TweakSection label="Theme"/>
+      <TweakRadio label="Mode" value={t.theme} options={['light','dark']} onChange={v=>setTweak('theme',v)}/>
+      <TweakSection label="Work grid"/>
+      <TweakRadio label="Tile size" value={t.gridSize} options={['3-up','2-up']} onChange={v=>setTweak('gridSize',v)}/>
+      <TweakSection label="Contact"/>
+      <TweakRadio label="Layout" value={t.contactLayout} options={['split','stacked']} onChange={v=>{setTweak('contactLayout',v);go('contact')}}/>
+    </TweaksPanel>
+  </div>;
+}
+loadAIM('../../').then(ns=>{window.AIM=ns;ReactDOM.createRoot(document.getElementById('root')).render(<App/>)});
+</script></body></html>
