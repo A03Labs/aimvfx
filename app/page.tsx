@@ -58,28 +58,13 @@ export default function WorkPage() {
           AIM VFX is a design &amp; motion studio making events, products and businesses{' '}
           <span style={{ color: 'var(--aim-indigo)' }}>impossible to miss.</span>
         </h1>
-        <nav
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '4px 28px',
-            fontSize: 'clamp(22px,2.2vw,32px)',
-            fontWeight: 600,
-            letterSpacing: '-.02em'
-          }}
-        >
+        <nav className="work-filter-nav">
           {filterBtn('all', 'All')}
           {cats.map((c) => filterBtn(c.id, c.label))}
         </nav>
       </section>
 
-      <section
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))',
-          gap: '48px 24px'
-        }}
-      >
+      <section className="work-grid">
         {items.map((w: WorkItem, i: number) => (
           <div
             key={w.slug}

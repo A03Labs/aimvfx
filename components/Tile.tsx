@@ -26,42 +26,29 @@ export function Tile({ item, showCat = true }: TileProps) {
   return (
     <Link
       href={`/work/${item.slug}`}
+      className="work-card"
       onMouseEnter={() => setH(true)}
       onMouseLeave={() => setH(false)}
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 12,
-        cursor: 'pointer',
-        color: 'var(--fg-1)'
-      }}
     >
-      <div style={{ borderRadius: 'var(--radius-sm)', overflow: 'hidden' }}>
+      <div className="work-card-media">
         <Poster item={item} hover={h} />
       </div>
-      <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, fontSize: 15, lineHeight: 1.3 }}>
-        {showCat && (
-          <span
-            style={{
-              fontSize: 12,
-              fontWeight: 600,
-              letterSpacing: '.14em',
-              textTransform: 'uppercase',
-              color: catColor
-            }}
-          >
-            {c.label}
-          </span>
-        )}
-        <span style={{ fontWeight: 600, whiteSpace: 'nowrap' }}>{item.client}</span>
-        <span style={{ color: 'var(--fg-3)', minWidth: 0 }}>― {item.project}</span>
+      <div className="work-card-caption">
+        <div className="work-card-info">
+          {showCat && (
+            <span className="work-card-cat" style={{ color: catColor }}>
+              {c.label}
+            </span>
+          )}
+          <span className="work-card-client">{item.client}</span>
+          <span className="work-card-project">― {item.project}</span>
+        </div>
         <span
+          className="work-card-arrow"
+          aria-hidden="true"
           style={{
-            marginLeft: 'auto',
-            color: 'var(--fg-3)',
-            opacity: h ? 1 : 0,
-            transform: h ? 'none' : 'translateX(-6px)',
-            transition: 'all var(--dur-base) var(--ease-out)'
+            opacity: h ? 1 : undefined,
+            transform: h ? 'none' : undefined
           }}
         >
           →
@@ -70,4 +57,3 @@ export function Tile({ item, showCat = true }: TileProps) {
     </Link>
   );
 }
-

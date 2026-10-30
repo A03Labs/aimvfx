@@ -214,8 +214,8 @@ export function YT({ item, box, hover, controls }: YTProps) {
             position: 'absolute',
             left: '50%',
             top: '50%',
-            width: 96,
-            height: 96,
+            width: 'clamp(56px, 14vw, 96px)',
+            height: 'clamp(56px, 14vw, 96px)',
             borderRadius: 999,
             background: '#fff',
             transform: 'translate(-50%,-50%) scale(' + (hover ? 1.06 : 1) + ')',
@@ -229,10 +229,10 @@ export function YT({ item, box, hover, controls }: YTProps) {
             style={{
               width: 0,
               height: 0,
-              borderTop: '14px solid transparent',
-              borderBottom: '14px solid transparent',
-              borderLeft: '22px solid #0c1023',
-              marginLeft: 6
+              borderTop: 'clamp(8px, 2.2vw, 14px) solid transparent',
+              borderBottom: 'clamp(8px, 2.2vw, 14px) solid transparent',
+              borderLeft: 'clamp(14px, 3.5vw, 22px) solid #0c1023',
+              marginLeft: 'clamp(3px, 1vw, 6px)'
             }}
           />
         </span>
@@ -265,7 +265,7 @@ export function Poster({ item, hover, ratio = '16/9', big, controls }: PosterPro
     transition: 'all ' + d + ' ' + e,
     ...s
   });
-  const fs = big ? 'clamp(120px,22vw,340px)' : 'clamp(64px,9vw,150px)';
+  const fs = big ? 'clamp(80px,18vw,340px)' : 'clamp(44px,9vw,150px)';
 
   if (item.wall) {
     return (
@@ -403,7 +403,7 @@ export function Poster({ item, hover, ratio = '16/9', big, controls }: PosterPro
           style={abs({
             left: '5%',
             top: '8%',
-            fontSize: big ? 64 : 28,
+            fontSize: big ? 'clamp(36px, 6vw, 64px)' : 'clamp(20px, 4vw, 28px)',
             fontWeight: 700,
             letterSpacing: '-.03em',
             color: '#0c1023',

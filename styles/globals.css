@@ -154,3 +154,113 @@ img, video {
   }
 }
 
+/* Responsive Work / Product Cards */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 48px 24px;
+}
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  color: var(--fg-1);
+  text-decoration: none;
+  width: 100%;
+}
+
+.work-card-media {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.work-card-caption {
+  display: flex;
+  align-items: baseline;
+  justifyContent: space-between;
+  gap: 10px;
+  font-size: 15px;
+  line-height: 1.35;
+  width: 100%;
+}
+
+.work-card-info {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  min-width: 0;
+}
+
+.work-card-cat {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.work-card-client {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.work-card-project {
+  color: var(--fg-3);
+  min-width: 0;
+  word-break: break-word;
+}
+
+.work-card-arrow {
+  margin-left: auto;
+  color: var(--fg-3);
+  flex-shrink: 0;
+  transition: all var(--dur-base) var(--ease-out);
+  opacity: 0;
+  transform: translateX(-6px);
+}
+
+.work-card:hover .work-card-arrow {
+  opacity: 1;
+  transform: none;
+}
+
+.work-filter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 28px;
+  font-size: clamp(20px, 2.2vw, 32px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 767px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 36px 16px;
+  }
+
+  .work-card {
+    gap: 10px;
+  }
+
+  .work-card-caption {
+    font-size: 14px;
+  }
+
+  .work-card-arrow {
+    opacity: 0.6;
+    transform: none;
+  }
+
+  .work-filter-nav {
+    gap: 8px 20px;
+    font-size: clamp(18px, 5vw, 24px);
+  }
+}
+
